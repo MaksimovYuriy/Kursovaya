@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.IO;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +20,16 @@ namespace Kursovaya
         public MainWindow()
         {
             InitializeComponent();
+            List<string> items = new List<string>();
+            using (StreamReader sr = new StreamReader(@"C:\Users\yuram\OneDrive\Рабочий стол\ООП Лабы\Kursovaya\Kursovaya\MarkList.txt"))
+            {
+                string? line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    items.Add(line);
+                }
+            }
+            Data.ItemsSource = items;
         }
 
         private void FilterButton_Click(object sender, RoutedEventArgs e)

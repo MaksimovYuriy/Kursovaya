@@ -23,5 +23,11 @@ namespace Kursovaya
         {
             InitializeComponent();
         }
+
+        private void AddMarkButton_Click(object sender, RoutedEventArgs e)
+        {
+            MarkBox mb = new MarkBox();
+            mb.Add(MarkTextBox.Text);
+        }
     }
 }
