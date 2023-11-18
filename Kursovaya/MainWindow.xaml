@@ -7,6 +7,28 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <DataGrid Grid.Row="1" Grid.ColumnSpan="6" Margin="10, 10, 10, 10" FontSize="14"/>
+        <Button Content="Добавить" Grid.Row="2" Grid.Column="0" FontSize="14"/>
+        <Button Content="Удалить" Grid.Row="2" Grid.Column="1" FontSize="14"/>
 
+        <Button Content="Каталог" Grid.Row="0" Grid.Column="0" FontSize="14"/>
+        <Button Content="Проданные" Grid.Row="0" Grid.Column="1" FontSize="14"/>
+        <Button Content="Фильтры" Grid.Row="0" Grid.Column="2" FontSize="14"/>
+        <Button Content="Продать" Grid.Row="0" Grid.Column="3" FontSize="14"/>
+        <Button Content="Сессия" Grid.Row="0" Grid.Column="4" FontSize="14"/>
+        <Button Content="Настройка выборок" Grid.Row="0" Grid.Column="5" FontSize="14"/>
     </Grid>
 </Window>
