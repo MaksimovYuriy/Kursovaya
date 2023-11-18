@@ -19,7 +19,7 @@ namespace Kursovaya
     /// </summary>
     public partial class FilterWindow : Window
     {
-        public FilterWindow()
+        public FilterWindow(MainWindow main)
         {
             InitializeComponent();
         }

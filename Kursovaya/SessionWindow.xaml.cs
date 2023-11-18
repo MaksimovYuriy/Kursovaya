@@ -19,7 +19,7 @@ namespace Kursovaya
     /// </summary>
     public partial class SessionWindow : Window
     {
-        public SessionWindow()
+        public SessionWindow(MainWindow main)
         {
             InitializeComponent();
         }

@@ -19,7 +19,7 @@ namespace Kursovaya
     /// </summary>
     public partial class ComboBoxWindow : Window
     {
-        public ComboBoxWindow()
+        public ComboBoxWindow(MainWindow main)
         {
             InitializeComponent();
         }

@@ -19,7 +19,7 @@ namespace Kursovaya
     /// </summary>
     public partial class AddWindow : Window
     {
-        public AddWindow()
+        public AddWindow(MainWindow main)
         {
             InitializeComponent();
         }
