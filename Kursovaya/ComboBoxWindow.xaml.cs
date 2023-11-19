@@ -34,7 +34,8 @@ namespace Kursovaya
 
         private void AddWorkerButton_Click(object sender, RoutedEventArgs e)
         {
-
+            ControlBox cb = new ControlBox(main.workerFile);
+            cb.Add(WorkerTextBox.Text);
         }
 
         private void AddColorButton_Click(object sender, RoutedEventArgs e)
@@ -45,7 +46,8 @@ namespace Kursovaya
 
         private void AddAdressButton_Click(object sender, RoutedEventArgs e)
         {
-
+            ControlBox cb = new ControlBox(main.adressFile);
+            cb.Add(AdressTextBox.Text);
         }
     }
 }

@@ -11,7 +11,7 @@ namespace Kursovaya
     internal class ControlBox : AbstractBox
     {
         private ComboBox? box;
-        protected override string file {  get; set; }
+        protected override string file { get; set; }
         protected List<string> items = new List<string>();
 
         public ControlBox(string fileName)
@@ -22,7 +22,10 @@ namespace Kursovaya
                 string? line;
                 while ((line = sr.ReadLine()) != null)
                 {
-                    items.Add(line);
+                    if (line != "")
+                    {
+                        items.Add(line);
+                    }
                 }
             }
         }
@@ -35,7 +38,7 @@ namespace Kursovaya
                 string? line;
                 while ((line = sr.ReadLine()) != null)
                 {
-                    if(line != "")
+                    if (line != "")
                     {
                         items.Add(line);
                     }
