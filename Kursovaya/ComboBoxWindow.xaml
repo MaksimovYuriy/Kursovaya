@@ -31,8 +31,8 @@
         <TextBox Name="AdressTextBox" Grid.Row="4" Grid.Column="1" FontSize="16" Margin="10, 10, 10, 10"/>
         
         <Button Name="AddMarkButton" Grid.Row="1" Grid.Column="2" FontSize="16" Margin="10, 10, 10, 10" Content="Добавить" Click="AddMarkButton_Click"/>
-        <Button Name="AddWorkerButton" Grid.Row="2" Grid.Column="2" FontSize="16" Margin="10, 10, 10, 10" Content="Добавить"/>
-        <Button Name="AddColorButton" Grid.Row="3" Grid.Column="2" FontSize="16" Margin="10, 10, 10, 10" Content="Добавить"/>
-        <Button Name="AddAdressButton" Grid.Row="4" Grid.Column="2" FontSize="16" Margin="10, 10, 10, 10" Content="Добавить"/>
+        <Button Name="AddWorkerButton" Grid.Row="2" Grid.Column="2" FontSize="16" Margin="10, 10, 10, 10" Content="Добавить" Click="AddWorkerButton_Click"/>
+        <Button Name="AddColorButton" Grid.Row="3" Grid.Column="2" FontSize="16" Margin="10, 10, 10, 10" Content="Добавить" Click="AddColorButton_Click"/>
+        <Button Name="AddAdressButton" Grid.Row="4" Grid.Column="2" FontSize="16" Margin="10, 10, 10, 10" Content="Добавить" Click="AddAdressButton_Click"/>
     </Grid>
 </Window>

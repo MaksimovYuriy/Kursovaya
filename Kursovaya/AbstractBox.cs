@@ -9,6 +9,7 @@ namespace Kursovaya
 {
     abstract class AbstractBox
     {
+        protected abstract string file { get; set; }
         public AbstractBox() { }
 
         public abstract void Add(string x);

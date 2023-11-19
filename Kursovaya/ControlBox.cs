@@ -8,14 +8,15 @@ using System.Windows.Controls;
 
 namespace Kursovaya
 {
-    internal class MarkBox : AbstractBox
+    internal class ControlBox : AbstractBox
     {
         private ComboBox? box;
-        protected string file = @"C:\Users\yuram\OneDrive\Рабочий стол\ООП Лабы\Kursovaya\Kursovaya\MarkList.txt";
+        protected override string file {  get; set; }
         protected List<string> items = new List<string>();
 
-        public MarkBox()
+        public ControlBox(string fileName)
         {
+            file = fileName;
             using (StreamReader sr = new StreamReader(file))
             {
                 string? line;
@@ -25,15 +26,19 @@ namespace Kursovaya
                 }
             }
         }
-        public MarkBox(ComboBox box_)
+        public ControlBox(ComboBox box_, string fileName)
         {
+            file = fileName;
             box = box_;
             using (StreamReader sr = new StreamReader(file))
             {
                 string? line;
                 while ((line = sr.ReadLine()) != null)
                 {
-                    items.Add(line);
+                    if(line != "")
+                    {
+                        items.Add(line);
+                    }
                 }
             }
             box.ItemsSource = items;
@@ -49,11 +54,11 @@ namespace Kursovaya
         {
             using (StreamWriter sw = new StreamWriter(file, false))
             {
-                await sw.WriteLineAsync(string.Empty);
+                await sw.WriteLineAsync();
             }
             using (StreamWriter sr = new StreamWriter(file, true))
             {
-                foreach(string item in items)
+                foreach (string item in items)
                 {
                     await sr.WriteLineAsync(item);
                 }

@@ -17,19 +17,11 @@ namespace Kursovaya
     /// </summary>
     public partial class MainWindow : Window
     {
+        public string markFile = @"Files\MarkList.txt";
+        public string colorFile = @"FIles\ColorList.txt";
         public MainWindow()
         {
             InitializeComponent();
-            List<string> items = new List<string>();
-            using (StreamReader sr = new StreamReader(@"C:\Users\yuram\OneDrive\Рабочий стол\ООП Лабы\Kursovaya\Kursovaya\MarkList.txt"))
-            {
-                string? line;
-                while ((line = sr.ReadLine()) != null)
-                {
-                    items.Add(line);
-                }
-            }
-            Data.ItemsSource = items;
         }
 
         private void FilterButton_Click(object sender, RoutedEventArgs e)
