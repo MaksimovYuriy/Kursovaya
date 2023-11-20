@@ -9,13 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="WPF\**" />
-    <EmbeddedResource Remove="WPF\**" />
-    <None Remove="WPF\**" />
-    <Page Remove="WPF\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="Files\ColorList.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
