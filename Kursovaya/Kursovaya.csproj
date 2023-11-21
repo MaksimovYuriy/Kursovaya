@@ -19,6 +19,9 @@
     <None Update="Files\ColorList.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Files\EntityList.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Files\MarkList.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

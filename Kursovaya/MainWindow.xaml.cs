@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using Kursovaya.Classes;
+using System.IO;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -24,6 +25,9 @@ namespace Kursovaya
         public MainWindow()
         {
             InitializeComponent();
+            EntityRepository repository = new EntityRepository();
+            List<Entity> data = repository.Read();
+            Data.ItemsSource = data;
         }
 
         private void FilterButton_Click(object sender, RoutedEventArgs e)

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 
-namespace Kursovaya
+namespace Kursovaya.Classes
 {
     abstract class AbstractBox
     {
