@@ -21,19 +21,19 @@
             <ColumnDefinition Width="21*"/>
         </Grid.ColumnDefinitions>
         <Label Content="Марка" Grid.Row="1" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14"/>
-        <ComboBox Grid.Row="1" Grid.Column="1" Margin="10, 10, 10, 10"/>
+        <ComboBox Name="Marks" Grid.Row="1" Grid.Column="1" Margin="10, 10, 10, 10"/>
 
         <Label Content="Работник" Grid.Row="2" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14"/>
-        <ComboBox Grid.Row="2" Grid.Column="1" Margin="10, 10, 10, 10"/>
+        <ComboBox Name="Workers" Grid.Row="2" Grid.Column="1" Margin="10, 10, 10, 10"/>
 
         <Label Content="Цвет" Grid.Row="3" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14"/>
-        <ComboBox Grid.Row="3" Grid.Column="1" Margin="10, 10, 10, 10"/>
+        <ComboBox Name="Colors" Grid.Row="3" Grid.Column="1" Margin="10, 10, 10, 10"/>
 
         <Label Content="Адрес" Grid.Row="4" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14"/>
-        <ComboBox Grid.Row="4" Grid.Column="1" Margin="10, 10, 10, 10"/>
+        <ComboBox Name="Adresses" Grid.Row="4" Grid.Column="1" Margin="10, 10, 10, 10"/>
 
         <Label Content="Продан?" Grid.Row="5" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14"/>
-        <ComboBox Grid.Row="5" Grid.Column="1" Margin="10, 10, 10, 10"/>
+        <ComboBox Name="Solds" Grid.Row="5" Grid.Column="1" Margin="10, 10, 10, 10"/>
 
         <Label Content="Выберите необходимые настройки для фильтра" Grid.Row="0" Grid.ColumnSpan="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14"/>
         <Button Content="Добавить" Margin="10,10,10,10" Grid.Row="6" Grid.ColumnSpan="2"/>

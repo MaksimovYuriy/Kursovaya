@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kursovaya.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,14 @@ namespace Kursovaya
     /// </summary>
     public partial class AddWindow : Window
     {
-        public AddWindow(MainWindow main)
+        private MainWindow main;
+        private ControlBox controlBox = new ControlBox();
+        public AddWindow(MainWindow main_)
         {
             InitializeComponent();
+            main = main_;
+            controlBox.SetData(Marks, main.markFile);
+            controlBox.SetData(Colors, main.colorFile);
         }
     }
 }

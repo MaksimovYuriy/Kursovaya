@@ -9,10 +9,9 @@ namespace Kursovaya.Classes
 {
     abstract class AbstractBox
     {
-        protected abstract string file { get; set; }
         public AbstractBox() { }
-
-        public abstract void Add(string x);
-        public abstract void Reset();
+        public abstract void Add(string x, string file);
+        public abstract void SetData(ComboBox box, string file);
+        public abstract void SetBoolData(ComboBox box);
     }
 }

@@ -20,7 +20,8 @@ namespace Kursovaya
     /// </summary>
     public partial class ComboBoxWindow : Window
     {
-        MainWindow main;
+        private MainWindow main;
+        private ControlBox controlBox = new ControlBox();
         public ComboBoxWindow(MainWindow main_)
         {
             InitializeComponent();
@@ -29,26 +30,22 @@ namespace Kursovaya
 
         private void AddMarkButton_Click(object sender, RoutedEventArgs e)
         {
-            ControlBox cb = new ControlBox(main.markFile);
-            cb.Add(MarkTextBox.Text);
+            controlBox.Add(MarkTextBox.Text, main.markFile);
         }
 
         private void AddWorkerButton_Click(object sender, RoutedEventArgs e)
         {
-            ControlBox cb = new ControlBox(main.workerFile);
-            cb.Add(WorkerTextBox.Text);
+            controlBox.Add(WorkerTextBox.Text, main.workerFile);
         }
 
         private void AddColorButton_Click(object sender, RoutedEventArgs e)
         {
-            ControlBox cb = new ControlBox(main.colorFile);
-            cb.Add(ColorTextBox.Text);
+            controlBox.Add(ColorTextBox.Text, main.colorFile);
         }
 
         private void AddAdressButton_Click(object sender, RoutedEventArgs e)
         {
-            ControlBox cb = new ControlBox(main.adressFile);
-            cb.Add(AdressTextBox.Text);
+            controlBox.Add(AdressTextBox.Text, main.adressFile);
         }
     }
 }

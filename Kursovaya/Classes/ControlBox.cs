@@ -10,29 +10,11 @@ namespace Kursovaya.Classes
 {
     internal class ControlBox : AbstractBox
     {
-        private ComboBox? box;
-        protected override string file { get; set; }
-        protected List<string> items = new List<string>();
+        public ControlBox() { }
 
-        public ControlBox(string fileName)
+        public override void SetData(ComboBox box, string file)
         {
-            file = fileName;
-            using (StreamReader sr = new StreamReader(file))
-            {
-                string? line;
-                while ((line = sr.ReadLine()) != null)
-                {
-                    if (line != "")
-                    {
-                        items.Add(line);
-                    }
-                }
-            }
-        }
-        public ControlBox(ComboBox box_, string fileName)
-        {
-            file = fileName;
-            box = box_;
+            List<string> items = new List<string>();
             using (StreamReader sr = new StreamReader(file))
             {
                 string? line;
@@ -47,24 +29,19 @@ namespace Kursovaya.Classes
             box.ItemsSource = items;
         }
 
-        public override void Add(string x)
+        public override void SetBoolData(ComboBox box)
         {
-            items.Add(x);
-            Reset();
+            bool[] bools = new bool[2];
+            bools[0] = false;
+            bools[1] = true;
+            box.ItemsSource = bools;
         }
 
-        public override async void Reset()
+        public override void Add(string x, string file)
         {
-            using (StreamWriter sw = new StreamWriter(file, false))
-            {
-                await sw.WriteLineAsync();
-            }
             using (StreamWriter sr = new StreamWriter(file, true))
             {
-                foreach (string item in items)
-                {
-                    await sr.WriteLineAsync(item);
-                }
+                sr.WriteLineAsync(x);
             }
         }
     }
