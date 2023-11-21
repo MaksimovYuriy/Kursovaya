@@ -9,7 +9,7 @@ namespace Kursovaya.Classes
 {
     internal class EntityRepository
     {
-        private string file = @"C:\Users\yuram\OneDrive\Рабочий стол\ООП Лабы\Kursovaya\Kursovaya\Files\EntityList.txt";
+        private string file = Constants.entityFile;
 
         public List<Entity> Read()
         {

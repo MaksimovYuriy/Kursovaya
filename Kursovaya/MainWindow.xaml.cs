@@ -18,10 +18,6 @@ namespace Kursovaya
     /// </summary>
     public partial class MainWindow : Window
     {
-        public string markFile = @"C:\Users\yuram\OneDrive\Рабочий стол\ООП Лабы\Kursovaya\Kursovaya\Files\MarkList.txt";
-        public string colorFile = @"C:\Users\yuram\OneDrive\Рабочий стол\ООП Лабы\Kursovaya\Kursovaya\Files\ColorList.txt";
-        public string workerFile = @"C:\Users\yuram\OneDrive\Рабочий стол\ООП Лабы\Kursovaya\Kursovaya\Files\WorkerList.txt";
-        public string adressFile = @"C:\Users\yuram\OneDrive\Рабочий стол\ООП Лабы\Kursovaya\Kursovaya\Files\AdressList.txt";
         public MainWindow()
         {
             InitializeComponent();

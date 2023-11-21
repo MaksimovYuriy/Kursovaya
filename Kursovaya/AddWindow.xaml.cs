@@ -26,8 +26,8 @@ namespace Kursovaya
         {
             InitializeComponent();
             main = main_;
-            controlBox.SetData(Marks, main.markFile);
-            controlBox.SetData(Colors, main.colorFile);
+            controlBox.SetData(Marks, Constants.markFile);
+            controlBox.SetData(Colors, Constants.colorFile);
         }
     }
 }

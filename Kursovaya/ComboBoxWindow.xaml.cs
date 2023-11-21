@@ -30,22 +30,22 @@ namespace Kursovaya
 
         private void AddMarkButton_Click(object sender, RoutedEventArgs e)
         {
-            controlBox.Add(MarkTextBox.Text, main.markFile);
+            controlBox.Add(MarkTextBox.Text, Constants.markFile);
         }
 
         private void AddWorkerButton_Click(object sender, RoutedEventArgs e)
         {
-            controlBox.Add(WorkerTextBox.Text, main.workerFile);
+            controlBox.Add(WorkerTextBox.Text, Constants.workerFile);
         }
 
         private void AddColorButton_Click(object sender, RoutedEventArgs e)
         {
-            controlBox.Add(ColorTextBox.Text, main.colorFile);
+            controlBox.Add(ColorTextBox.Text, Constants.colorFile);
         }
 
         private void AddAdressButton_Click(object sender, RoutedEventArgs e)
         {
-            controlBox.Add(AdressTextBox.Text, main.adressFile);
+            controlBox.Add(AdressTextBox.Text, Constants.adressFile);
         }
     }
 }
