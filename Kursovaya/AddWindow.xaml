@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovaya"
         mc:Ignorable="d"
-        Title="AddWindow" Height="350" Width="400">
+        Title="AddWindow" Height="400" Width="400">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
@@ -23,19 +24,22 @@
         <Label Content="Марка" Grid.Row="1" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14"/>
         <ComboBox Name="Marks" Grid.Row="1" Grid.Column="1" Margin="10, 10, 10, 10"/>
 
-        <Label Content="Работник" Grid.Row="2" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14"/>
-        <ComboBox Name="Workers" Grid.Row="2" Grid.Column="1" Margin="10, 10, 10, 10"/>
+        <Label Content="Цена" Grid.Row="2" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14"/>
+        <TextBox Name="Costs" Grid.Row="2" Grid.Column="1" FontSize="14" Margin="10, 10, 10, 10"/>
+
+        <Label Content="Работник" Grid.Row="4" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14"/>
+        <ComboBox Name="Workers" Grid.Row="4" Grid.Column="1" Margin="10, 10, 10, 10"/>
 
         <Label Content="Цвет" Grid.Row="3" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14"/>
         <ComboBox Name="Colors" Grid.Row="3" Grid.Column="1" Margin="10, 10, 10, 10"/>
 
-        <Label Content="Адрес" Grid.Row="4" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14"/>
-        <ComboBox Name="Adresses" Grid.Row="4" Grid.Column="1" Margin="10, 10, 10, 10"/>
+        <Label Content="Адрес" Grid.Row="5" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14"/>
+        <ComboBox Name="Adresses" Grid.Row="5" Grid.Column="1" Margin="10, 10, 10, 10"/>
 
-        <Label Content="Продан?" Grid.Row="5" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14"/>
-        <ComboBox Name="Solds" Grid.Row="5" Grid.Column="1" Margin="10, 10, 10, 10"/>
+        <Label Content="Продан?" Grid.Row="6" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14"/>
+        <ComboBox Name="Solds" Grid.Row="6" Grid.Column="1" Margin="10, 10, 10, 10"/>
 
         <Label Content="Выберите необходимые настройки для фильтра" Grid.Row="0" Grid.ColumnSpan="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14"/>
-        <Button Content="Добавить" Margin="10,10,10,10" Grid.Row="6" Grid.ColumnSpan="2"/>
+        <Button Name="AddButton" Content="Добавить" Margin="10,10,10,10" Grid.Row="7" Grid.ColumnSpan="2" Click="AddButton_Click"/>
     </Grid>
 </Window>

@@ -24,7 +24,7 @@
         <Button Name="AddButton" Content="Добавить" Grid.Row="2" Grid.Column="0" FontSize="14" Click="AddButton_Click"/>
         <Button Content="Удалить" Grid.Row="2" Grid.Column="1" FontSize="14"/>
 
-        <Button Content="Каталог" Grid.Row="0" Grid.Column="0" FontSize="14"/>
+        <Button Name="CatalogButton" Content="Каталог" Grid.Row="0" Grid.Column="0" FontSize="14" Click="CatalogButton_Click"/>
         <Button Content="Проданные" Grid.Row="0" Grid.Column="1" FontSize="14"/>
         <Button Name="FilterButton" Content="Фильтры" Grid.Row="0" Grid.Column="2" FontSize="14" Click="FilterButton_Click"/>
         <Button Content="Продать" Grid.Row="0" Grid.Column="3" FontSize="14"/>

@@ -39,9 +39,9 @@ namespace Kursovaya.Classes
 
         public override void Add(string x, string file)
         {
-            using (StreamWriter sr = new StreamWriter(file, true))
+            using (StreamWriter sw = new StreamWriter(file, true))
             {
-                sr.WriteLineAsync(x);
+                sw.WriteLineAsync(x);
             }
         }
     }

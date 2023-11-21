@@ -18,12 +18,10 @@ namespace Kursovaya
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
-            EntityRepository repository = new EntityRepository();
-            List<Entity> data = repository.Read();
-            Data.ItemsSource = data;
         }
 
         private void FilterButton_Click(object sender, RoutedEventArgs e)
@@ -48,6 +46,15 @@ namespace Kursovaya
         {
             AddWindow AddWnd = new AddWindow(this);
             AddWnd.Show();
+        }
+
+        private void CatalogButton_Click(object sender, RoutedEventArgs e)
+        {
+            ControlData cd = new ControlData(Data);
+            if(Data.ItemsSource == null)
+            {
+                cd.Update();
+            }
         }
     }
 }

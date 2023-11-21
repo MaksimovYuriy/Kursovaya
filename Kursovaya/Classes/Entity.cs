@@ -14,8 +14,9 @@ namespace Kursovaya.Classes
         public string color { get; private set; }
         public string worker { get; private set; }
         public string adress { get; private set; }
+        public bool sold { get; private set; }
 
-        public Entity(string mark, int cost, string color, string worker, string adress)
+        public Entity(string mark, int cost, string color, string worker, string adress, bool sold)
         {
             this.id = AllEntities.count;
             AllEntities.count++;
@@ -25,11 +26,12 @@ namespace Kursovaya.Classes
             this.color = color;
             this.worker = worker;
             this.adress = adress;
+            this.sold = sold;
         }
 
         public override string ToString()
         {
-            return $"{mark};{cost};{color};{worker};{adress}";
+            return $"{mark};{cost};{color};{worker};{adress};{sold}";
         }
     }
 }
