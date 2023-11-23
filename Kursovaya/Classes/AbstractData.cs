@@ -19,5 +19,6 @@ namespace Kursovaya.Classes
         public abstract void Write(List<string> list);
         public abstract void Remove();
         public abstract void Update();
+        public abstract void Sell();
     }
 }

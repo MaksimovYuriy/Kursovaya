@@ -33,5 +33,13 @@ namespace Kursovaya.Classes
         {
             return $"{mark};{cost};{color};{worker};{adress};{sold}";
         }
+
+        public void Sell()
+        {
+            if (!sold)
+            {
+                sold = true;
+            }
+        }
     }
 }

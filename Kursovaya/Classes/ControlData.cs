@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Ribbon;
 
 namespace Kursovaya.Classes
 {
@@ -91,7 +92,7 @@ namespace Kursovaya.Classes
 
         public override void Write(List<string> list)
         {
-            using(var sw = new  StreamWriter(Constants.entityFile, false))
+            using(var sw = new StreamWriter(Constants.entityFile, false))
             {
                 sw.WriteLineAsync(string.Empty);
             }
@@ -109,6 +110,37 @@ namespace Kursovaya.Classes
             AllEntities.count = 0;
             Read(Constants.entityFile);
             SetData();
+        }
+
+        public override void Sell()
+        {
+            List<string> rights = new List<string>();
+            if (grid.SelectedItem != null)
+            {
+                Entity entity = grid.SelectedItem as Entity;
+                string selectedEntity = entity.ToString();
+                entity.Sell();
+                string soldEntity = AllEntities.getSoldString(entity.ToString());
+                using(var sr = new StreamReader(Constants.entityFile))
+                {
+                    string? line;
+                    while((line = sr.ReadLine()) != null)
+                    {
+                        if(line != "")
+                        {
+                            if(line == selectedEntity)
+                            {
+                                rights.Add(soldEntity);
+                            }
+                            else
+                            {
+                                rights.Add(line);
+                            }
+                        }
+                    }
+                }
+                Write(rights);
+            }
         }
     }
 }
