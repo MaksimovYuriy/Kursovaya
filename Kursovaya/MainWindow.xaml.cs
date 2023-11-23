@@ -56,5 +56,12 @@ namespace Kursovaya
                 cd.Update();
             }
         }
+
+        private void RemoveButton_Click(object sender, RoutedEventArgs e)
+        {
+            ControlData cd = new ControlData(Data);
+            cd.Remove();
+            cd.Update();
+        }
     }
 }

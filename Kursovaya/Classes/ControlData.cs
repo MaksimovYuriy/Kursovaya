@@ -12,6 +12,7 @@ namespace Kursovaya.Classes
     internal class ControlData : AbstractData
     {
         public DataGrid grid { get; private set; }
+        private List<Entity> data = new List<Entity>();
 
         public ControlData(DataGrid grid)
         {
@@ -20,9 +21,9 @@ namespace Kursovaya.Classes
 
         public override void Read(string file)
         {
+            data.Clear();
             using (StreamReader sr = new StreamReader(file))
             {
-                List<Entity> entities = new List<Entity>();
                 string? line;
                 while ((line = sr.ReadLine()) != null)
                 {
@@ -32,11 +33,15 @@ namespace Kursovaya.Classes
                         int entityCost = Convert.ToInt32(entitySplit[1]);
                         bool entitySold = Convert.ToBoolean(entitySplit[5]);
                         Entity entity = new Entity(entitySplit[0], entityCost, entitySplit[2], entitySplit[3], entitySplit[4], entitySold);
-                        entities.Add(entity);
+                        data.Add(entity);
                     }
                 }
-                this.grid.ItemsSource = entities;
             }
+        }
+
+        public override void SetData()
+        {
+            grid.ItemsSource = data;
         }
 
         public override void Add(Entity entity)
@@ -66,13 +71,44 @@ namespace Kursovaya.Classes
 
         public override void Remove()
         {
-            throw new NotImplementedException();
+            List<string> rights = new List<string>();
+            if(grid.SelectedItem != null)
+            {
+                string remove = (grid.SelectedItem as Entity).ToString();
+                using(var sr = new StreamReader(Constants.entityFile))
+                {
+                    string? line;
+                    while((line = sr.ReadLine()) != null){
+                        if(line != remove && line != "")
+                        {
+                            rights.Add(line);
+                        }
+                    }
+                }
+                Write(rights);
+            }
+        }
+
+        public override void Write(List<string> list)
+        {
+            using(var sw = new  StreamWriter(Constants.entityFile, false))
+            {
+                sw.WriteLineAsync(string.Empty);
+            }
+            using (var sw = new StreamWriter(Constants.entityFile, true))
+            {
+                foreach(var item in list)
+                {
+                    sw.WriteLineAsync(item);
+                }
+            }
         }
 
         public override void Update()
         {
             AllEntities.count = 0;
             Read(Constants.entityFile);
+            SetData();
         }
     }
 }
