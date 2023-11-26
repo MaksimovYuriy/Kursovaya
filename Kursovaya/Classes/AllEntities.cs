@@ -8,7 +8,10 @@ namespace Kursovaya.Classes
 {
     static class AllEntities
     {
-        public static int count = 0;
+        public static int countEntity = 0;
+        public static int countActions = 0;
+
+        public static DateTime start = DateTime.Now;
 
         public static string getSoldString(string line)
         {

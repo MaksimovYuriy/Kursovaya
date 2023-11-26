@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kursovaya.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,14 @@ namespace Kursovaya
     /// </summary>
     public partial class SessionWindow : Window
     {
+        private TimeSpan working = DateTime.Now - AllEntities.start;
         public SessionWindow(MainWindow main)
         {
             InitializeComponent();
+            Records.Text = AllEntities.countEntity.ToString();
+            Actions.Text = AllEntities.countActions.ToString();
+            DateStart.Text = AllEntities.start.ToString();
+            TimeRunning.Text = working.ToString();
         }
     }
 }

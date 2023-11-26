@@ -18,7 +18,6 @@ namespace Kursovaya
     /// </summary>
     public partial class MainWindow : Window
     {
-
         public MainWindow()
         {
             InitializeComponent();
@@ -51,10 +50,7 @@ namespace Kursovaya
         private void CatalogButton_Click(object sender, RoutedEventArgs e)
         {
             ControlData cd = new ControlData(Data);
-            if(Data.ItemsSource == null)
-            {
-                cd.Update();
-            }
+            cd.Update();
         }
 
         private void RemoveButton_Click(object sender, RoutedEventArgs e)

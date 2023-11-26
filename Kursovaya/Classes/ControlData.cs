@@ -43,6 +43,7 @@ namespace Kursovaya.Classes
         public override void SetData()
         {
             grid.ItemsSource = data;
+            AllEntities.countActions += 1;
         }
 
         public override void Add(Entity entity)
@@ -72,7 +73,7 @@ namespace Kursovaya.Classes
 
         public override void Update()
         {
-            AllEntities.count = 0;
+            AllEntities.countEntity = 0;
             Read(Constants.entityFile);
             SetData();
         }

@@ -18,8 +18,8 @@ namespace Kursovaya.Classes
 
         public Entity(string mark, int cost, string color, string worker, string adress, bool sold)
         {
-            this.id = AllEntities.count;
-            AllEntities.count++;
+            this.id = AllEntities.countEntity;
+            AllEntities.countEntity++;
 
             this.mark = mark;
             this.cost = cost;

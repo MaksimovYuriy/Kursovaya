@@ -43,6 +43,7 @@ namespace Kursovaya.Classes
             {
                 sw.WriteLineAsync(x);
             }
+            AllEntities.countActions += 1;
         }
     }
 }
