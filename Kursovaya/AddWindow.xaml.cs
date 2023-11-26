@@ -39,7 +39,7 @@ namespace Kursovaya
         {
             if (controlData.Check(Marks, Costs, Colors, Workers, Adresses, Solds))
             {
-                controlData.Add(controlData.GetEntity(Marks, Costs, Colors, Workers, Adresses, Solds));
+                DataOperations.Add(controlData.GetEntity(Marks, Costs, Colors, Workers, Adresses, Solds), controlData);
             }
             else
             {

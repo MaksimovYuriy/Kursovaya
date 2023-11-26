@@ -56,15 +56,13 @@ namespace Kursovaya
         private void RemoveButton_Click(object sender, RoutedEventArgs e)
         {
             ControlData cd = new ControlData(Data);
-            DataOperations.Remove(Data);
-            cd.Update();
+            DataOperations.Remove(Data, cd);
         }
 
         private void SellButton_Click(object sender, RoutedEventArgs e)
         {
             ControlData cd = new ControlData(Data);
-            DataOperations.Sell(Data);
-            cd.Update();
+            DataOperations.Sell(Data, cd);
         }
     }
 }

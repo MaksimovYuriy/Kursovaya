@@ -15,7 +15,6 @@ namespace Kursovaya.Classes
         public abstract void SetData();
         public abstract Entity GetEntity(ComboBox mark, TextBox cost, ComboBox color, ComboBox worker, ComboBox adress, ComboBox sold);
         public abstract bool Check(ComboBox mark, TextBox cost, ComboBox color, ComboBox worker, ComboBox adress, ComboBox sold);
-        public abstract void Add(Entity entity);
         public abstract void Update();
     }
 }

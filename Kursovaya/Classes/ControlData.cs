@@ -46,15 +46,6 @@ namespace Kursovaya.Classes
             AllEntities.countActions += 1;
         }
 
-        public override void Add(Entity entity)
-        {
-            using (StreamWriter sw = new StreamWriter(Constants.entityFile, true))
-            {
-                sw.WriteLineAsync(entity.ToString());
-            }
-            Update();
-        }
-
         public override bool Check(ComboBox mark, TextBox cost, ComboBox color, ComboBox worker, ComboBox adress, ComboBox sold)
         {
             return mark.SelectedItem != null && cost.Text != null && color.SelectedItem != null && worker.SelectedItem != null && adress.SelectedItem != null && sold.SelectedItem != null;

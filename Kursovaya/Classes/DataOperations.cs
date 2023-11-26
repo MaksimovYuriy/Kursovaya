@@ -25,7 +25,16 @@ namespace Kursovaya.Classes
             }
         }
 
-        public static void Remove(DataGrid grid)
+        public static void Add(Entity entity, ControlData cd)
+        {
+            using (StreamWriter sw = new StreamWriter(Constants.entityFile, true))
+            {
+                sw.WriteLineAsync(entity.ToString());
+            }
+            cd.Update();
+        }
+
+        public static void Remove(DataGrid grid, ControlData cd)
         {
             List<string> rights = new List<string>();
             if (grid.SelectedItem != null)
@@ -43,10 +52,11 @@ namespace Kursovaya.Classes
                     }
                 }
                 Write(rights);
+                cd.Update();
             }
         }
 
-        public static void Sell(DataGrid grid)
+        public static void Sell(DataGrid grid, ControlData cd)
         {
             List<string> rights = new List<string>();
             if (grid.SelectedItem != null)
@@ -74,6 +84,7 @@ namespace Kursovaya.Classes
                     }
                 }
                 Write(rights);
+                cd.Update();
             }
         }
     }
