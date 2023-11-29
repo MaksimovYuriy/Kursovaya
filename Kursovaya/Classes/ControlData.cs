@@ -13,7 +13,7 @@ namespace Kursovaya.Classes
     internal class ControlData : AbstractData
     {
         public DataGrid grid { get; private set; }
-        private List<Entity> data = new List<Entity>();
+        public List<Entity> data = new List<Entity>();
 
         public ControlData(DataGrid grid)
         {

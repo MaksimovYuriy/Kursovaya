@@ -1,4 +1,6 @@
 ﻿using Kursovaya.Classes;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.IO;
 using System.Text;
 using System.Windows;
@@ -63,6 +65,17 @@ namespace Kursovaya
         {
             ControlData cd = new ControlData(Data);
             DataOperations.Sell(Data, cd);
+        }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            AllEntities.Filter(this);
+        }
+
+        private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            ControlData cd = new ControlData(Data);
+            cd.Update();
         }
     }
 }

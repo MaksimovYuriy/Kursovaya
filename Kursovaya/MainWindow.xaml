@@ -25,10 +25,9 @@
         <Button Name="RemoveButton" Content="Удалить" Grid.Row="2" Grid.Column="1" FontSize="14" Click="RemoveButton_Click"/>
 
         <Button Name="CatalogButton" Content="Каталог" Grid.Row="0" Grid.Column="0" FontSize="14" Click="CatalogButton_Click"/>
-        <Button Content="Проданные" Grid.Row="0" Grid.Column="1" FontSize="14"/>
-        <Button Name="FilterButton" Content="Фильтры" Grid.Row="0" Grid.Column="2" FontSize="14" Click="FilterButton_Click"/>
-        <Button Name="SellButton" Content="Продать" Grid.Row="0" Grid.Column="3" FontSize="14" Click="SellButton_Click"/>
-        <Button Name="SessionButton" Content="Сессия" Grid.Row="0" Grid.Column="4" FontSize="14" Click="SessionButton_Click"/>
-        <Button Name="ComboBoxButton" Content="Настройка выборок" Grid.Row="0" Grid.Column="5" FontSize="14" Click="ComboBoxButton_Click"/>
+        <Button Name="SellButton" Content="Продать" Grid.Row="2" Grid.Column="2" FontSize="14" Click="SellButton_Click"/>
+        <Button Name="SessionButton" Content="Сессия" Grid.Row="0" Grid.Column="3" FontSize="14" Click="SessionButton_Click"/>
+        <Button Name="ComboBoxButton" Content="Настройка выборок" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" FontSize="14" Click="ComboBoxButton_Click"/>
+        <CheckBox Grid.Row="0" Grid.Column="5" Content="Проданные" FontSize="14" VerticalContentAlignment="Center" HorizontalAlignment="Center" IsChecked="False" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
     </Grid>
 </Window>
