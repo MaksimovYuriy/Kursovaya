@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kursovaya.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,19 @@ namespace Kursovaya
     /// </summary>
     public partial class FilterWindow : Window
     {
-        public FilterWindow(MainWindow main)
+        private MainWindow main;
+        private ControlBox controlBox = new ControlBox();
+        private ControlData controlData;
+        public FilterWindow(MainWindow main_)
         {
             InitializeComponent();
+            main = main_;
+            controlData = new ControlData(main.Data);
+            controlBox.SetData(Marks, Constants.markFile);
+            controlBox.SetData(Colors, Constants.colorFile);
+            controlBox.SetData(Adresses, Constants.adressFile);
+            controlBox.SetData(Workers, Constants.workerFile);
+            controlBox.SetBoolData(Solds);
         }
     }
 }

@@ -20,17 +20,12 @@ namespace Kursovaya
     /// </summary>
     public partial class MainWindow : Window
     {
+        private ControlData cd;
         public MainWindow()
         {
             InitializeComponent();
             ControlBox controlBox = new ControlBox();
             controlBox.SetData(Marks, Constants.markFile);
-        }
-
-        private void FilterButton_Click(object sender, RoutedEventArgs e)
-        {
-            FilterWindow FilterWnd = new FilterWindow(this);
-            FilterWnd.Show();
         }
 
         private void SessionButton_Click(object sender, RoutedEventArgs e)
@@ -53,40 +48,48 @@ namespace Kursovaya
 
         private void CatalogButton_Click(object sender, RoutedEventArgs e)
         {
-            ControlData cd = new ControlData(Data);
+            cd = new ControlData(Data);
             cd.Update();
         }
 
         private void RemoveButton_Click(object sender, RoutedEventArgs e)
         {
-            ControlData cd = new ControlData(Data);
+            cd = new ControlData(Data);
             DataOperations.Remove(Data, cd);
         }
 
         private void SellButton_Click(object sender, RoutedEventArgs e)
         {
-            ControlData cd = new ControlData(Data);
+            cd = new ControlData(Data);
             DataOperations.Sell(Data, cd);
         }
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            ControlData cd = new ControlData(Data);
+            Marks.SelectedItem = null;
+            cd = new ControlData(Data);
             cd.Update();
             AllEntities.FilterSold(this);
         }
 
         private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
-            ControlData cd = new ControlData(Data);
+            cd = new ControlData(Data);
             cd.Update();
         }
 
         private void Marks_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ControlData cd = new ControlData(Data);
+            CheckBox.IsChecked = false;
+            cd = new ControlData(Data);
             cd.Update();
             AllEntities.FilterMark(this);
+        }
+
+        private void FilterButton_Click(object sender, RoutedEventArgs e)
+        {
+            FilterWindow FilterWnd = new FilterWindow(this);
+            FilterWnd.Show();
         }
     }
 }
