@@ -22,13 +22,28 @@ namespace Kursovaya.Classes
             return result;
         }
 
-        public static void Filter(MainWindow main)
+        public static void FilterSold(MainWindow main)
         {
             var SourceList = new CollectionViewSource() { Source = main.Data.ItemsSource };
             ICollectionView ICV = SourceList.View;
             var filter = new Predicate<object>(x => ((Entity)x).sold == true);
             ICV.Filter = filter;
-            main.Data.ItemsSource = ICV;
+            if (ICV != null)
+            {
+                main.Data.ItemsSource = ICV;
+            }
+        }
+
+        public static void FilterMark(MainWindow main)
+        {
+            var SourceList = new CollectionViewSource() { Source = main.Data.ItemsSource };
+            ICollectionView ICV = SourceList.View;
+            var filter = new Predicate<object>(x => ((Entity)x).mark == (main.Marks.SelectedItem as string));
+            ICV.Filter = filter;
+            if (ICV != null)
+            {
+                main.Data.ItemsSource = ICV;
+            }
         }
     }
 }

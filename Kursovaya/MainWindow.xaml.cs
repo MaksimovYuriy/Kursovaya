@@ -23,6 +23,8 @@ namespace Kursovaya
         public MainWindow()
         {
             InitializeComponent();
+            ControlBox controlBox = new ControlBox();
+            controlBox.SetData(Marks, Constants.markFile);
         }
 
         private void FilterButton_Click(object sender, RoutedEventArgs e)
@@ -69,13 +71,22 @@ namespace Kursovaya
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            AllEntities.Filter(this);
+            ControlData cd = new ControlData(Data);
+            cd.Update();
+            AllEntities.FilterSold(this);
         }
 
         private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
             ControlData cd = new ControlData(Data);
             cd.Update();
+        }
+
+        private void Marks_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ControlData cd = new ControlData(Data);
+            cd.Update();
+            AllEntities.FilterMark(this);
         }
     }
 }

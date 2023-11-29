@@ -29,5 +29,6 @@
         <Button Name="SessionButton" Content="Сессия" Grid.Row="0" Grid.Column="3" FontSize="14" Click="SessionButton_Click"/>
         <Button Name="ComboBoxButton" Content="Настройка выборок" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" FontSize="14" Click="ComboBoxButton_Click"/>
         <CheckBox Grid.Row="0" Grid.Column="5" Content="Проданные" FontSize="14" VerticalContentAlignment="Center" HorizontalAlignment="Center" IsChecked="False" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+        <ComboBox Name="Marks" Grid.Row="0" Grid.Column="4" Margin="10, 10, 10, 10" SelectionChanged="Marks_SelectionChanged"/>
     </Grid>
 </Window>
