@@ -45,5 +45,17 @@ namespace Kursovaya.Classes
                 main.Data.ItemsSource = ICV;
             }
         }
+
+        public static void FullFilter(MainWindow main, string mark, string color, string worker, string adress, bool sold)
+        {
+            var SourceList = new CollectionViewSource() { Source = main.Data.ItemsSource };
+            ICollectionView ICV = SourceList.View;
+            var filter = new Predicate<object>(x => ((Entity)x).mark.Contains(mark) && ((Entity)x).color.Contains(color) && ((Entity)x).worker.Contains(worker) && ((Entity)x).adress.Contains(adress) && ((Entity)x).sold == sold);
+            ICV.Filter = filter;
+            if (ICV != null)
+            {
+                main.Data.ItemsSource = ICV;
+            }
+        }
     }
 }

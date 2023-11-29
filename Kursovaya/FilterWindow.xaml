@@ -36,6 +36,6 @@
         <ComboBox Name="Solds" Grid.Row="5" Grid.Column="1" Margin="10, 10, 10, 10"/>
 
         <Label Content="Выберите необходимые настройки для фильтра" Grid.Row="0" Grid.ColumnSpan="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="14"/>
-        <Button Content="Применить" Margin="10,10,10,10" Grid.Row="6" Grid.ColumnSpan="2"/>
+        <Button Name="FilterButton" Content="Применить" Margin="10,10,10,10" Grid.Row="6" Grid.ColumnSpan="2" Click="FilterButton_Click"/>
     </Grid>
 </Window>
