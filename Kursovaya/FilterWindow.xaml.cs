@@ -37,14 +37,21 @@ namespace Kursovaya
 
         private void FilterButton_Click(object sender, RoutedEventArgs e)
         {
-            string filterMark = Marks.SelectedItem?.ToString() ?? "";
-            string filterColor = Colors.SelectedItem?.ToString() ?? "";
-            string filterWorker = Workers.SelectedItem?.ToString() ?? "";
-            string filterAdress = Adresses.SelectedItem?.ToString() ?? "";
-            bool filterSold = Convert.ToBoolean(Solds.SelectedItem);
-            controlData = new ControlData(main.Data);
-            controlData.Update();
-            AllEntities.FullFilter(main, filterMark, filterColor, filterWorker, filterAdress, filterSold);
+            try
+            {
+                string filterMark = Marks.SelectedItem?.ToString() ?? "";
+                string filterColor = Colors.SelectedItem?.ToString() ?? "";
+                string filterWorker = Workers.SelectedItem?.ToString() ?? "";
+                string filterAdress = Adresses.SelectedItem?.ToString() ?? "";
+                bool filterSold = Convert.ToBoolean(Solds.SelectedItem);
+                controlData = new ControlData(main.Data);
+                controlData.Update();
+                AllEntities.FullFilter(main, filterMark, filterColor, filterWorker, filterAdress, filterSold);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

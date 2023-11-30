@@ -12,7 +12,6 @@ namespace Kursovaya.Classes
     {
         public static int countEntity = 0;
         public static int countActions = 0;
-
         public static DateTime start = DateTime.Now;
 
         public static string getSoldString(string line)

@@ -39,7 +39,7 @@ namespace Kursovaya.Classes
             List<string> rights = new List<string>();
             if (grid.SelectedItem != null)
             {
-                string remove = (grid.SelectedItem as Entity).ToString();
+                string remove = (grid.SelectedItem as Entity)?.ToString() ?? "";
                 using (var sr = new StreamReader(Constants.entityFile))
                 {
                     string? line;
@@ -61,8 +61,8 @@ namespace Kursovaya.Classes
             List<string> rights = new List<string>();
             if (grid.SelectedItem != null)
             {
-                Entity entity = grid.SelectedItem as Entity;
-                string selectedEntity = entity.ToString();
+                Entity? entity = grid.SelectedItem as Entity;
+                string selectedEntity = entity!.ToString();
                 entity.Sell();
                 string soldEntity = AllEntities.getSoldString(entity.ToString());
                 using (var sr = new StreamReader(Constants.entityFile))

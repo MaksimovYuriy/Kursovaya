@@ -53,12 +53,12 @@ namespace Kursovaya.Classes
 
         public override Entity GetEntity(ComboBox marks, TextBox costs, ComboBox colors, ComboBox workers, ComboBox adresses, ComboBox solds)
         {
-            string mark = marks.SelectedItem as string;
+            string mark = marks.SelectedItem as string ?? "";
             int cost = Convert.ToInt32(costs.Text);
-            string color = colors.SelectedItem as string;
-            string worker = workers.SelectedItem as string;
-            string adress = adresses.SelectedItem as string;
-            bool? sold = solds.SelectedItem as bool?;
+            string color = colors.SelectedItem as string ?? "";
+            string worker = workers.SelectedItem as string ?? "";
+            string adress = adresses.SelectedItem as string ?? "";
+            bool sold = Convert.ToBoolean(solds.SelectedItem);
             return new Entity(mark, cost, color, worker, adress, (bool)sold);
         }
 

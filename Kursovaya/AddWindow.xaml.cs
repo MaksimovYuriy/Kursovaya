@@ -37,11 +37,11 @@ namespace Kursovaya
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            if (controlData.Check(Marks, Costs, Colors, Workers, Adresses, Solds))
+            try
             {
                 DataOperations.Add(controlData.GetEntity(Marks, Costs, Colors, Workers, Adresses, Solds), controlData);
             }
-            else
+            catch
             {
                 MessageBox.Show("Заполните все поля!");
             }

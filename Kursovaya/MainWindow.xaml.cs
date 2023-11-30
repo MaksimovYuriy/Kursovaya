@@ -20,7 +20,7 @@ namespace Kursovaya
     /// </summary>
     public partial class MainWindow : Window
     {
-        private ControlData cd;
+        private ControlData? cd;
         public MainWindow()
         {
             InitializeComponent();
@@ -30,66 +30,137 @@ namespace Kursovaya
 
         private void SessionButton_Click(object sender, RoutedEventArgs e)
         {
-            SessionWindow SessionWnd = new SessionWindow(this);
-            SessionWnd.Show();
+            try
+            {
+                SessionWindow SessionWnd = new SessionWindow(this);
+                SessionWnd.Show();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void ComboBoxButton_Click(object sender, RoutedEventArgs e)
         {
-            ComboBoxWindow ComboBoxWnd = new ComboBoxWindow(this);
-            ComboBoxWnd.Show();
+            try
+            {
+                ComboBoxWindow ComboBoxWnd = new ComboBoxWindow(this);
+                ComboBoxWnd.Show();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            AddWindow AddWnd = new AddWindow(this);
-            AddWnd.Show();
+            try
+            {
+                AddWindow AddWnd = new AddWindow(this);
+                AddWnd.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void CatalogButton_Click(object sender, RoutedEventArgs e)
         {
-            cd = new ControlData(Data);
-            cd.Update();
+            try
+            {
+                Marks.SelectedItem = null;
+                cd = new ControlData(Data);
+                cd.Update();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void RemoveButton_Click(object sender, RoutedEventArgs e)
         {
-            cd = new ControlData(Data);
-            DataOperations.Remove(Data, cd);
+            try
+            {
+                cd = new ControlData(Data);
+                DataOperations.Remove(Data, cd);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void SellButton_Click(object sender, RoutedEventArgs e)
         {
-            cd = new ControlData(Data);
-            DataOperations.Sell(Data, cd);
+            try
+            {
+                cd = new ControlData(Data);
+                DataOperations.Sell(Data, cd);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            Marks.SelectedItem = null;
-            cd = new ControlData(Data);
-            cd.Update();
-            AllEntities.FilterSold(this);
+            try
+            {
+                Marks.SelectedItem = null;
+                cd = new ControlData(Data);
+                cd.Update();
+                AllEntities.FilterSold(this);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
-            cd = new ControlData(Data);
-            cd.Update();
+            try
+            {
+                cd = new ControlData(Data);
+                cd.Update();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Marks_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            CheckBox.IsChecked = false;
-            cd = new ControlData(Data);
-            cd.Update();
-            AllEntities.FilterMark(this);
+            try
+            {
+                CheckBox.IsChecked = false;
+                cd = new ControlData(Data);
+                cd.Update();
+                AllEntities.FilterMark(this);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void FilterButton_Click(object sender, RoutedEventArgs e)
         {
-            FilterWindow FilterWnd = new FilterWindow(this);
-            FilterWnd.Show();
+            try
+            {
+                FilterWindow FilterWnd = new FilterWindow(this);
+                FilterWnd.Show();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
