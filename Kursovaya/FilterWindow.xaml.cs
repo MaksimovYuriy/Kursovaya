@@ -43,7 +43,15 @@ namespace Kursovaya
                 string filterColor = Colors.SelectedItem?.ToString() ?? "";
                 string filterWorker = Workers.SelectedItem?.ToString() ?? "";
                 string filterAdress = Adresses.SelectedItem?.ToString() ?? "";
-                bool filterSold = Convert.ToBoolean(Solds.SelectedItem);
+                bool? filterSold;
+                if(Solds.SelectedItem == null)
+                {
+                    filterSold = null;
+                }
+                else
+                {
+                    filterSold = Convert.ToBoolean(Solds.SelectedItem);
+                }
                 controlData = new ControlData(main.Data);
                 controlData.Update();
                 AllEntities.FullFilter(main, filterMark, filterColor, filterWorker, filterAdress, filterSold);
