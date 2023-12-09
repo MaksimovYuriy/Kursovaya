@@ -33,7 +33,8 @@ namespace Kursovaya.Classes
                         string[] entitySplit = line.Split(';');
                         int entityCost = Convert.ToInt32(entitySplit[1]);
                         bool entitySold = Convert.ToBoolean(entitySplit[5]);
-                        Entity entity = new Entity(entitySplit[0], entityCost, entitySplit[2], entitySplit[3], entitySplit[4], entitySold);
+                        DateOnly date = DateOnly.FromDateTime(Convert.ToDateTime(entitySplit[6]));
+                        Entity entity = new Entity(entitySplit[0], entityCost, entitySplit[2], entitySplit[3], entitySplit[4], entitySold, date);
                         data.Add(entity);
                     }
                 }

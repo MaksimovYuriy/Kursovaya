@@ -17,7 +17,7 @@ namespace Kursovaya.Classes
         public static string getSoldString(string line)
         {
             string[] split = line.Split(';');
-            string result = split[0] + ";" + split[1] + ";" + split[2] + ";" + split[3] + ";" + split[4] + ";" + "True";
+            string result = split[0] + ";" + split[1] + ";" + split[2] + ";" + split[3] + ";" + split[4] + ";" + "True" + ";" + split[6];
             return result;
         }
 
