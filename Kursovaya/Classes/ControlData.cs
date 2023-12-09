@@ -69,5 +69,41 @@ namespace Kursovaya.Classes
             Read(Constants.entityFile);
             SetData();
         }
+
+        public double[] getValuesForGraph(int n)
+        {
+            var Dict = new Dictionary<DateTime, int>();
+            DateTime[] dateOnlies = new DateTime[n];
+            for (int i = 0; i < dateOnlies.Length; i++)
+            {
+                dateOnlies[i] = DateTime.Today.AddDays((-1) * i);
+            }
+            dateOnlies.Reverse();
+            foreach(var item in dateOnlies)
+            {
+                Dict.Add(item, 0);
+            }
+            Update();
+            foreach(var item in data)
+            {
+                string[] entity = item.ToString().Split(';');
+                if (Convert.ToBoolean(entity[5]))
+                {
+                    DateTime date = Convert.ToDateTime(entity[6]);
+                    if (date >= DateTime.Today.AddDays(-4))
+                    {
+                        Dict[date]++;
+                    }
+                }
+            }
+            double[] result = new double[n];
+            int k = 0;
+            foreach(var item in Dict)
+            {
+                result[k] = item.Value;
+                k++;
+            }
+            return result;
+        }
     }
 }

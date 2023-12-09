@@ -16,6 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="ScottPlot.WPF" Version="4.1.69" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="Files\AdressList.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

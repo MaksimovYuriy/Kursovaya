@@ -65,5 +65,21 @@ namespace Kursovaya.Classes
                 main.Data.ItemsSource = ICV;
             }
         }
+
+        public static double[] getDaysForGraph(int n)
+        {
+            DateTime[] dateOnlies = new DateTime[n];
+            for(int i = 0; i < dateOnlies.Length; i++)
+            {
+                dateOnlies[i] = DateTime.Today.AddDays((-1) * i);
+            }
+            dateOnlies.Reverse();
+            double[] result = new double[n];
+            for(int i = 0; i < dateOnlies.Length; i++)
+            {
+                result[i] = dateOnlies[i].ToOADate();
+            }
+            return result;
+        }
     }
 }

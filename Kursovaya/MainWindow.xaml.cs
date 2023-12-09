@@ -162,5 +162,11 @@ namespace Kursovaya
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void GraphButton_Click(object sender, RoutedEventArgs e)
+        {
+            Graph graph = new Graph(this);
+            graph.Show();
+        }
     }
 }
