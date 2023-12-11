@@ -28,18 +28,18 @@ namespace Kursovaya
             InitializeComponent();
             main = main_;
             controlData = new ControlData(main.Data);
-            controlBox.SetData(Marks, Constants.markFile);
-            controlBox.SetData(Colors, Constants.colorFile);
-            controlBox.SetData(Adresses, Constants.adressFile);
-            controlBox.SetData(Workers, Constants.workerFile);
-            controlBox.SetBoolData(Solds);
+            controlBox.setData(Marks, Constants.markFile);
+            controlBox.setData(Colors, Constants.colorFile);
+            controlBox.setData(Adresses, Constants.adressFile);
+            controlBox.setData(Workers, Constants.workerFile);
+            controlBox.setBoolData(Solds);
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                DataOperations.Add(controlData.GetEntity(Marks, Costs, Colors, Workers, Adresses, Solds), controlData);
+                DataOperations.Add(controlData.getEntity(Marks, Costs, Colors, Workers, Adresses, Solds), controlData);
             }
             catch
             {

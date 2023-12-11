@@ -21,7 +21,7 @@ namespace Kursovaya.Classes
             return result;
         }
 
-        public static void FilterSold(MainWindow main)
+        public static void filterSold(MainWindow main)
         {
             var SourceList = new CollectionViewSource() { Source = main.Data.ItemsSource };
             ICollectionView ICV = SourceList.View;
@@ -33,7 +33,7 @@ namespace Kursovaya.Classes
             }
         }
 
-        public static void FilterMark(MainWindow main)
+        public static void filterMark(MainWindow main)
         {
             var SourceList = new CollectionViewSource() { Source = main.Data.ItemsSource };
             ICollectionView ICV = SourceList.View;
@@ -45,7 +45,7 @@ namespace Kursovaya.Classes
             }
         }
 
-        public static void FullFilter(MainWindow main, string mark, string color, string worker, string adress, bool? sold)
+        public static void fullFilter(MainWindow main, string mark, string color, string worker, string adress, bool? sold)
         {
             var SourceList = new CollectionViewSource() { Source = main.Data.ItemsSource };
             ICollectionView ICV = SourceList.View;
@@ -64,22 +64,6 @@ namespace Kursovaya.Classes
             {
                 main.Data.ItemsSource = ICV;
             }
-        }
-
-        public static double[] getDaysForGraph(int n)
-        {
-            DateTime[] dateOnlies = new DateTime[n];
-            for(int i = 0; i < dateOnlies.Length; i++)
-            {
-                dateOnlies[i] = DateTime.Today.AddDays((-1) * i);
-            }
-            dateOnlies.Reverse();
-            double[] result = new double[n];
-            for(int i = 0; i < dateOnlies.Length; i++)
-            {
-                result[i] = dateOnlies[i].ToOADate();
-            }
-            return result;
         }
     }
 }

@@ -114,7 +114,7 @@ namespace Kursovaya
                 Marks.SelectedItem = null;
                 cd = new ControlData(Data);
                 cd.Update();
-                AllEntities.FilterSold(this);
+                AllEntities.filterSold(this);
             }
             catch(Exception ex)
             {
@@ -142,7 +142,7 @@ namespace Kursovaya
                 CheckBox.IsChecked = false;
                 cd = new ControlData(Data);
                 cd.Update();
-                AllEntities.FilterMark(this);
+                AllEntities.filterMark(this);
             }
             catch(Exception ex)
             {

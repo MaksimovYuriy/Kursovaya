@@ -33,7 +33,7 @@ namespace Kursovaya
 
         private void BuildButton_Click(object sender, RoutedEventArgs e)
         {
-            X = AllEntities.getDaysForGraph(Convert.ToInt32(NDays.Text));
+            X = cd.getDaysForGraph(Convert.ToInt32(NDays.Text));
             Y = cd.getValuesForGraph(Convert.ToInt32(NDays.Text));
 
             SellGraph.Plot.AddScatter(X, Y);

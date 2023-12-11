@@ -11,7 +11,7 @@ namespace Kursovaya.Classes
     {
         public AbstractBox() { }
         public abstract void Add(string x, string file);
-        public abstract void SetData(ComboBox box, string file);
-        public abstract void SetBoolData(ComboBox box);
+        public abstract void setData(ComboBox box, string file);
+        public abstract void setBoolData(ComboBox box);
     }
 }

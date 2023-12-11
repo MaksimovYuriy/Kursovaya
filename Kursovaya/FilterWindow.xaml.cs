@@ -28,11 +28,11 @@ namespace Kursovaya
             InitializeComponent();
             main = main_;
             controlData = new ControlData(main.Data);
-            controlBox.SetData(Marks, Constants.markFile);
-            controlBox.SetData(Colors, Constants.colorFile);
-            controlBox.SetData(Adresses, Constants.adressFile);
-            controlBox.SetData(Workers, Constants.workerFile);
-            controlBox.SetBoolData(Solds);
+            controlBox.setData(Marks, Constants.markFile);
+            controlBox.setData(Colors, Constants.colorFile);
+            controlBox.setData(Adresses, Constants.adressFile);
+            controlBox.setData(Workers, Constants.workerFile);
+            controlBox.setBoolData(Solds);
         }
 
         private void FilterButton_Click(object sender, RoutedEventArgs e)
@@ -54,7 +54,7 @@ namespace Kursovaya
                 }
                 controlData = new ControlData(main.Data);
                 controlData.Update();
-                AllEntities.FullFilter(main, filterMark, filterColor, filterWorker, filterAdress, filterSold);
+                AllEntities.fullFilter(main, filterMark, filterColor, filterWorker, filterAdress, filterSold);
             }
             catch(Exception ex)
             {

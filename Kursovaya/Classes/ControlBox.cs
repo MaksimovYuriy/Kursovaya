@@ -12,7 +12,7 @@ namespace Kursovaya.Classes
     {
         public ControlBox() { }
 
-        public override void SetData(ComboBox box, string file)
+        public override void setData(ComboBox box, string file)
         {
             List<string> items = new List<string>();
             using (StreamReader sr = new StreamReader(file))
@@ -29,7 +29,7 @@ namespace Kursovaya.Classes
             box.ItemsSource = items;
         }
 
-        public override void SetBoolData(ComboBox box)
+        public override void setBoolData(ComboBox box)
         {
             bool[] bools = new bool[2];
             bools[0] = false;

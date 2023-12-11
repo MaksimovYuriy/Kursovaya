@@ -41,7 +41,7 @@ namespace Kursovaya.Classes
             }
         }
 
-        public override void SetData()
+        public override void setData()
         {
             grid.ItemsSource = data;
             AllEntities.countActions += 1;
@@ -52,7 +52,7 @@ namespace Kursovaya.Classes
             return mark.SelectedItem != null && cost.Text != null && color.SelectedItem != null && worker.SelectedItem != null && adress.SelectedItem != null && sold.SelectedItem != null;
         }
 
-        public override Entity GetEntity(ComboBox marks, TextBox costs, ComboBox colors, ComboBox workers, ComboBox adresses, ComboBox solds)
+        public override Entity getEntity(ComboBox marks, TextBox costs, ComboBox colors, ComboBox workers, ComboBox adresses, ComboBox solds)
         {
             string mark = marks.SelectedItem as string ?? "";
             int cost = Convert.ToInt32(costs.Text);
@@ -68,6 +68,22 @@ namespace Kursovaya.Classes
             AllEntities.countEntity = 0;
             Read(Constants.entityFile);
             SetData();
+        }
+
+        public double[] getDaysForGraph(int n)
+        {
+            DateTime[] dateOnlies = new DateTime[n];
+            for (int i = 0; i < dateOnlies.Length; i++)
+            {
+                dateOnlies[i] = DateTime.Today.AddDays((-1) * i);
+            }
+            dateOnlies.Reverse();
+            double[] result = new double[n];
+            for (int i = 0; i < dateOnlies.Length; i++)
+            {
+                result[i] = dateOnlies[i].ToOADate();
+            }
+            return result;
         }
 
         public double[] getValuesForGraph(int n)
