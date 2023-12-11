@@ -5,7 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovaya"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Background="#FF202020">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -20,17 +27,17 @@
             <RowDefinition Height="8*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <DataGrid Name="Data" Grid.Row="1" Grid.ColumnSpan="6" Margin="10, 10, 10, 10" FontSize="14" AutoGenerateColumns="True"/>
-        <Button Name="AddButton" Content="Добавить" Grid.Row="2" Grid.Column="0" FontSize="14" Click="AddButton_Click"/>
-        <Button Name="RemoveButton" Content="Удалить" Grid.Row="2" Grid.Column="1" FontSize="14" Click="RemoveButton_Click"/>
+        <DataGrid Style="{DynamicResource DataGridStyle}" Name="Data" Grid.Row="1" Grid.ColumnSpan="6" Margin="10, 10, 10, 10" FontSize="14" AutoGenerateColumns="True"/>
+        <Button Style="{DynamicResource ButtonStyle}" Name="AddButton" Content="Добавить" Grid.Row="2" Grid.Column="0" FontSize="14" Click="AddButton_Click"/>
+        <Button Style="{DynamicResource ButtonStyle}" Name="RemoveButton" Content="Удалить" Grid.Row="2" Grid.Column="1" FontSize="14" Click="RemoveButton_Click"/>
 
-        <Button Name="CatalogButton" Content="Каталог" Grid.Row="0" Grid.Column="0" FontSize="14" Click="CatalogButton_Click"/>
-        <Button Name="SellButton" Content="Продать" Grid.Row="2" Grid.Column="2" FontSize="14" Click="SellButton_Click"/>
-        <Button Name="SessionButton" Content="Сессия" Grid.Row="0" Grid.Column="3" FontSize="14" Click="SessionButton_Click"/>
-        <Button Name="ComboBoxButton" Content="Настройка выборок" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" FontSize="14" Click="ComboBoxButton_Click"/>
-        <CheckBox Name="CheckBox" Grid.Row="0" Grid.Column="5" Content="Проданные" FontSize="14" VerticalContentAlignment="Center" HorizontalAlignment="Center" IsChecked="False" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+        <Button Style="{DynamicResource ButtonStyle}" Name="CatalogButton" Content="Каталог" Grid.Row="0" Grid.Column="0" FontSize="14" Click="CatalogButton_Click"/>
+        <Button Style="{DynamicResource ButtonStyle}" Name="SellButton" Content="Продать" Grid.Row="2" Grid.Column="2" FontSize="14" Click="SellButton_Click"/>
+        <Button Style="{DynamicResource ButtonStyle}" Name="SessionButton" Content="Сессия" Grid.Row="0" Grid.Column="3" FontSize="14" Click="SessionButton_Click"/>
+        <Button Style="{DynamicResource ButtonStyle}" Name="ComboBoxButton" Content="Настройка выборок" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" FontSize="14" Click="ComboBoxButton_Click"/>
+        <CheckBox Name="CheckBox" Grid.Row="0" Grid.Column="5" Content="Проданные" FontSize="14" VerticalContentAlignment="Center" HorizontalAlignment="Center" IsChecked="False" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Foreground="White"/>
         <ComboBox Name="Marks" Grid.Row="0" Grid.Column="4" Margin="10, 10, 10, 10" SelectionChanged="Marks_SelectionChanged"/>
-        <Button Name="FilterButton" Grid.Column="5" Grid.Row="2" Content="Фильтр" FontSize="14" Click="FilterButton_Click"/>
-        <Button Name="GraphButton" Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="2" Content="График продаж" FontSize="14" Click="GraphButton_Click"/>
+        <Button Style="{DynamicResource ButtonStyle}" Name="FilterButton" Grid.Column="5" Grid.Row="2" Content="Фильтр" FontSize="14" Click="FilterButton_Click"/>
+        <Button Style="{DynamicResource ButtonStyle}" Name="GraphButton" Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="2" Content="График продаж" FontSize="14" Click="GraphButton_Click"/>
     </Grid>
 </Window>

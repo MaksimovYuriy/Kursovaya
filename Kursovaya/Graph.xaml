@@ -5,7 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursovaya"
         mc:Ignorable="d"
-        Title="Graph" Height="450" Width="800">
+        Title="Graph" Height="450" Width="800" Background="#FF252525">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*"/>
@@ -18,8 +25,8 @@
             <RowDefinition Height="9*"/>
         </Grid.RowDefinitions>
         <WpfPlot Name="SellGraph" Grid.ColumnSpan="4" Margin="0,43,0,0" Grid.RowSpan="2"/>
-        <Label Content="Введите количество дней:" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Style="{DynamicResource LabelStyle1}" Content="Введите количество дней:" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <TextBox Name="NDays" Grid.Row="0" Grid.Column="1" FontSize="14" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Button Name="BuildButton" Grid.Column="2" Grid.Row="0" FontSize="14" Content="Построить" Click="BuildButton_Click"/>
+        <Button Style="{DynamicResource ButtonStyle}" Name="BuildButton" Grid.Column="2" Grid.Row="0" FontSize="14" Content="Построить" Click="BuildButton_Click"/>
     </Grid>
 </Window>
