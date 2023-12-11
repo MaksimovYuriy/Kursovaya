@@ -67,7 +67,7 @@ namespace Kursovaya.Classes
         {
             AllEntities.countEntity = 0;
             Read(Constants.entityFile);
-            SetData();
+            setData();
         }
 
         public double[] getDaysForGraph(int n)

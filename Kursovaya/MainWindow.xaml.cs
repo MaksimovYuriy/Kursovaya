@@ -25,7 +25,7 @@ namespace Kursovaya
         {
             InitializeComponent();
             ControlBox controlBox = new ControlBox();
-            controlBox.SetData(Marks, Constants.markFile);
+            controlBox.setData(Marks, Constants.markFile);
         }
 
         private void SessionButton_Click(object sender, RoutedEventArgs e)
