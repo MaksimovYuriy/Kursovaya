@@ -1,4 +1,5 @@
 ﻿using Kursovaya.Classes;
+using ScottPlot.Plottable;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,6 +40,7 @@ namespace Kursovaya
             SellGraph.Plot.AddScatter(X, Y);
             SellGraph.Plot.XAxis.DateTimeFormat(true);
             SellGraph.Refresh();
+            SellGraph.Reset();
         }
     }
 }
