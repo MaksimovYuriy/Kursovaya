@@ -47,15 +47,15 @@ namespace Kursovaya.Classes
             AllEntities.countActions += 1;
         }
 
-        public override bool Check(ComboBox mark, TextBox cost, ComboBox color, ComboBox worker, ComboBox adress, ComboBox sold)
-        {
-            return mark.SelectedItem != null && cost.Text != null && color.SelectedItem != null && worker.SelectedItem != null && adress.SelectedItem != null && sold.SelectedItem != null;
-        }
-
         public override Entity getEntity(ComboBox marks, TextBox costs, ComboBox colors, ComboBox workers, ComboBox adresses, ComboBox solds)
         {
             string mark = marks.SelectedItem as string ?? "";
-            int cost = Convert.ToInt32(costs.Text);
+            int cost = 0;
+            if (Convert.ToInt64(costs.Text) >= 1000000000)
+            {
+                MessageBox.Show("Цена слишком большая!");
+            }
+            cost = Convert.ToInt32(costs.Text);
             string color = colors.SelectedItem as string ?? "";
             string worker = workers.SelectedItem as string ?? "";
             string adress = adresses.SelectedItem as string ?? "";

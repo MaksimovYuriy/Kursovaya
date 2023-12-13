@@ -34,13 +34,20 @@ namespace Kursovaya
 
         private void BuildButton_Click(object sender, RoutedEventArgs e)
         {
-            X = cd.getDaysForGraph(Convert.ToInt32(NDays.Text));
-            Y = cd.getValuesForGraph(Convert.ToInt32(NDays.Text));
+            try
+            {
+                X = cd.getDaysForGraph(Convert.ToInt32(NDays.Text));
+                Y = cd.getValuesForGraph(Convert.ToInt32(NDays.Text));
 
-            SellGraph.Plot.AddScatter(X, Y);
-            SellGraph.Plot.XAxis.DateTimeFormat(true);
-            SellGraph.Refresh();
-            SellGraph.Reset();
+                SellGraph.Plot.AddScatter(X, Y);
+                SellGraph.Plot.XAxis.DateTimeFormat(true);
+                SellGraph.Refresh();
+                SellGraph.Reset();
+            }
+            catch
+            {
+                MessageBox.Show("Минимальное количество дней: 4");
+            }
         }
     }
 }
