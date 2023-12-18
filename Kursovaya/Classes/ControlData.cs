@@ -106,7 +106,7 @@ namespace Kursovaya.Classes
                 if (Convert.ToBoolean(entity[5]))
                 {
                     DateTime date = Convert.ToDateTime(entity[6]);
-                    if (date >= DateTime.Today.AddDays(-4))
+                    if (date >= DateTime.Today.AddDays(-n))
                     {
                         Dict[date]++;
                     }
